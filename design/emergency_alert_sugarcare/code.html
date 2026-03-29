@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SugarCare - High Glucose Alert</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#86f2e4",
+              "surface-dim": "#d8dadc",
+              "on-secondary": "#ffffff",
+              "background": "#f7f9fb",
+              "on-primary-fixed-variant": "#005321",
+              "on-tertiary-fixed-variant": "#7f2a21",
+              "primary": "#006e2f",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#002109",
+              "on-tertiary-fixed": "#410001",
+              "primary-container": "#22c55e",
+              "surface-tint": "#006e2f",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-highest": "#e0e3e5",
+              "outline": "#6d7b6c",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed-dim": "#ffb4a9",
+              "surface-container": "#eceef0",
+              "on-secondary-fixed": "#00201d",
+              "tertiary-container": "#ff8b7c",
+              "on-secondary-container": "#006f66",
+              "surface-container-high": "#e6e8ea",
+              "primary-fixed": "#6bff8f",
+              "on-background": "#191c1e",
+              "inverse-surface": "#2d3133",
+              "outline-variant": "#bccbb9",
+              "tertiary-fixed": "#ffdad5",
+              "on-surface-variant": "#3d4a3d",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed-dim": "#4ae176",
+              "on-primary": "#ffffff",
+              "surface": "#f7f9fb",
+              "on-error": "#ffffff",
+              "tertiary": "#9e4036",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#4ae176",
+              "on-primary-container": "#004b1e",
+              "on-tertiary-container": "#76231b",
+              "secondary": "#006a61",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e0e3e5",
+              "on-secondary-fixed-variant": "#005049"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .blur-backdrop {
+        backdrop-filter: blur(8px);
+      }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background">
+<!-- Dimmed TopNavBar per instructions -->
+<header class="bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 sticky z-40 shadow-sm opacity-40 pointer-events-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold text-[#22C55E] tracking-tighter font-['Manrope']">SugarCare</div>
+<nav class="hidden md:flex space-x-8 font-['Manrope'] font-bold tracking-tight">
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#">Dashboard</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Weekly Plan</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Food Guide</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Habits</a>
+</nav>
+<div class="flex items-center space-x-4 text-[#22C55E]">
+<span class="material-symbols-outlined">notifications</span>
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Background Content (Obscured) -->
+<main class="max-w-7xl mx-auto px-6 py-8 opacity-20 select-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="col-span-2 bg-surface-container-lowest p-12 rounded-xl">
+<div class="h-64 bg-surface-container-low rounded-lg mb-6"></div>
+<div class="h-8 bg-surface-container-low w-1/2 rounded mb-4"></div>
+<div class="h-4 bg-surface-container-low w-3/4 rounded"></div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl">
+<div class="h-48 bg-surface-container-low rounded-lg"></div>
+</div>
+</div>
+</main>
+<!-- Critical Alert Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/20 blur-backdrop">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-[0_24px_60px_rgba(0,0,0,0.15)] overflow-hidden">
+<!-- Red Warning Header Card -->
+<div class="bg-tertiary-container p-8 md:p-12 text-on-tertiary-container relative overflow-hidden">
+<div class="absolute -right-8 -top-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="relative z-10 flex items-start gap-6">
+<div class="bg-surface-container-lowest/30 p-4 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div>
+<p class="font-headline font-extrabold text-4xl mb-2 tracking-tight">312 mg/dL</p>
+<h1 class="font-headline font-bold text-2xl">High Blood Sugar Detected</h1>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-8 md:p-12 space-y-10">
+<div class="space-y-6">
+<h2 class="text-xl font-bold font-headline text-on-surface">Immediate Actions to Take:</h2>
+<div class="grid gap-4">
+<!-- Step 1 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-lg">
+<div class="bg-surface-container-lowest text-primary p-3 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-3xl">water_drop</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Drink water</h3>
+<p class="text-on-surface-variant">Stay hydrated to help your kidneys flush out excess sugar.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-lg">
+<div class="bg-surface-container-lowest text-primary p-3 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-3xl">directions_walk</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Light walking</h3>
+<p class="text-on-surface-variant">A gentle 10-minute stroll can help lower glucose levels safely.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-lg">
+<div class="bg-surface-container-lowest text-tertiary p-3 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-3xl">block</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Avoid carbs immediately</h3>
+<p class="text-on-surface-variant">Refrain from consuming any sugars or starches until levels stabilize.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 h-16 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-xl font-headline font-bold text-lg shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        See Immediate Steps
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="flex-1 h-16 bg-surface-container-high text-on-surface rounded-xl font-headline font-bold text-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                        Consult Doctor
+                    </button>
+</div>
+<!-- Professional Medical Disclaimer -->
+<p class="text-center text-sm font-body text-outline leading-relaxed px-4">
+                    © 2024 SugarCare HealthTech. Medical Disclaimer: Consult a physician before making dietary changes. This alert is for informational purposes only. If you experience vomiting, confusion, or difficulty breathing, call emergency services immediately.
+                </p>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Suppressed/Hidden per instructions for focused journey) -->
+<nav class="hidden">
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl rounded-t-[3rem] shadow-[0_-12px_40px_rgba(25,28,30,0.06)]">
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<!-- More nav items would go here but are suppressed for this modal state -->
+</div>
+</nav>
+</body></html>

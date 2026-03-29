@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Plan | SugarCare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#86f2e4",
+              "surface-dim": "#d8dadc",
+              "on-secondary": "#ffffff",
+              "background": "#f7f9fb",
+              "on-primary-fixed-variant": "#005321",
+              "on-tertiary-fixed-variant": "#7f2a21",
+              "primary": "#006e2f",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#002109",
+              "on-tertiary-fixed": "#410001",
+              "primary-container": "#22c55e",
+              "surface-tint": "#006e2f",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-highest": "#e0e3e5",
+              "outline": "#6d7b6c",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed-dim": "#ffb4a9",
+              "surface-container": "#eceef0",
+              "on-secondary-fixed": "#00201d",
+              "tertiary-container": "#ff8b7c",
+              "on-secondary-container": "#006f66",
+              "surface-container-high": "#e6e8ea",
+              "primary-fixed": "#6bff8f",
+              "on-background": "#191c1e",
+              "inverse-surface": "#2d3133",
+              "outline-variant": "#bccbb9",
+              "tertiary-fixed": "#ffdad5",
+              "on-surface-variant": "#3d4a3d",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed-dim": "#4ae176",
+              "on-primary": "#ffffff",
+              "surface": "#f7f9fb",
+              "on-error": "#ffffff",
+              "tertiary": "#9e4036",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#4ae176",
+              "on-primary-container": "#004b1e",
+              "on-tertiary-container": "#76231b",
+              "secondary": "#006a61",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e0e3e5",
+              "on-secondary-fixed-variant": "#005049"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold text-[#22C55E] tracking-tighter font-headline">SugarCare</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-bold tracking-tight">
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Dashboard</a>
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#">Weekly Plan</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Food Guide</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Habits</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-xs">Metabolic Optimization</span>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tight">Your Weekly Plan</h1>
+<p class="text-on-surface-variant max-w-xl text-lg">A curated nutritional roadmap designed to keep your glucose levels stable while maximizing energy and satiety.</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-xl font-headline font-bold shadow-lg flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">download</span>
+                Download Plan
+            </button>
+</header>
+<!-- Legend -->
+<div class="flex flex-wrap gap-4 mb-8">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+<span class="text-xs font-bold font-headline uppercase tracking-tighter">Low GI</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="text-xs font-bold font-headline uppercase tracking-tighter">Protein Rich</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+<span class="text-xs font-bold font-headline uppercase tracking-tighter">Fiber High</span>
+</div>
+</div>
+<!-- 7-Day Horizontal Scroll -->
+<div class="overflow-x-auto hide-scrollbar -mx-6 px-6 pb-8">
+<div class="flex gap-6 w-max">
+<!-- Day Card Template (Monday) -->
+<div class="w-80 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-6">
+<div class="border-b border-surface-container-high pb-4">
+<h2 class="font-headline font-extrabold text-2xl text-on-surface">Monday</h2>
+<p class="text-label-md text-on-surface-variant font-medium">Focus: Stabilization</p>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Breakfast</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Steel Cut Oats &amp; Berries</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Lunch</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Grilled Salmon Salad</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Dinner</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Lemon Herb Tofu Bowl</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Snack</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Handful of Walnuts</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 bg-tertiary-container/10 rounded-lg p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm">swap_horiz</span>
+<span class="text-[10px] font-bold uppercase text-tertiary">Swap Suggestion</span>
+</div>
+<p class="text-xs font-medium italic">White Rice → Cauliflower Rice</p>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="w-80 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-6">
+<div class="border-b border-surface-container-high pb-4">
+<h2 class="font-headline font-extrabold text-2xl text-on-surface">Tuesday</h2>
+<p class="text-label-md text-on-surface-variant font-medium">Focus: Lean Protein</p>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Breakfast</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Avocado &amp; Egg Toast</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Lunch</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Chicken Quinoa Bowl</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Dinner</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Roasted Turkey &amp; Greens</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Snack</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Greek Yogurt</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 bg-tertiary-container/10 rounded-lg p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm">swap_horiz</span>
+<span class="text-[10px] font-bold uppercase text-tertiary">Swap Suggestion</span>
+</div>
+<p class="text-xs font-medium italic">Sugar Tea → Herbal Hibiscus</p>
+</div>
+</div>
+<!-- Wednesday -->
+<div class="w-80 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-6 border-2 border-primary/20">
+<div class="border-b border-surface-container-high pb-4">
+<div class="flex justify-between items-start">
+<h2 class="font-headline font-extrabold text-2xl text-on-surface">Wednesday</h2>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 rounded uppercase font-bold">Today</span>
+</div>
+<p class="text-label-md text-on-surface-variant font-medium">Focus: High Fiber</p>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Breakfast</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Chia Seed Pudding</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Lunch</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Lentil &amp; Kale Soup</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Dinner</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Millet Risotto</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Snack</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Cucumber &amp; Hummus</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 bg-tertiary-container/10 rounded-lg p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm">swap_horiz</span>
+<span class="text-[10px] font-bold uppercase text-tertiary">Swap Suggestion</span>
+</div>
+<p class="text-xs font-medium italic">Pasta → Zucchini Noodles</p>
+</div>
+</div>
+<!-- Thursday -->
+<div class="w-80 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-6 opacity-80">
+<div class="border-b border-surface-container-high pb-4">
+<h2 class="font-headline font-extrabold text-2xl text-on-surface">Thursday</h2>
+<p class="text-label-md text-on-surface-variant font-medium">Focus: Omega-3</p>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Breakfast</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Smoked Salmon Omelet</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Lunch</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Tuna Salad Wraps</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Dinner</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Baked Cod &amp; Asparagus</span>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Snack</label>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
+<span class="text-sm font-semibold">Apple &amp; Almond Butter</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 bg-tertiary-container/10 rounded-lg p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary text-sm">swap_horiz</span>
+<span class="text-[10px] font-bold uppercase text-tertiary">Swap Suggestion</span>
+</div>
+<p class="text-xs font-medium italic">White Potato → Sweet Potato</p>
+</div>
+</div>
+<!-- Days 5, 6, 7 (Simplified for layout) -->
+<div class="w-80 bg-surface-container-low rounded-xl p-6 flex items-center justify-center border-2 border-dashed border-outline-variant">
+<div class="text-center">
+<h2 class="font-headline font-bold text-lg text-outline">Fri - Sun</h2>
+<p class="text-sm text-on-surface-variant">Plans generating...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Swap Suggestions Spotlight (Bento Style) -->
+<section class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container-low rounded-xl p-8">
+<h3 class="font-headline font-extrabold text-2xl mb-6">Smart Swap Logic</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center gap-4 border border-outline-variant/10">
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-error uppercase block mb-1">Instead of</span>
+<span class="font-bold">White Rice</span>
+</div>
+<span class="material-symbols-outlined text-primary">trending_flat</span>
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Choose</span>
+<span class="font-bold">Millet</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center gap-4 border border-outline-variant/10">
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-error uppercase block mb-1">Instead of</span>
+<span class="font-bold">Sugar Tea</span>
+</div>
+<span class="material-symbols-outlined text-primary">trending_flat</span>
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Choose</span>
+<span class="font-bold">Herbal Tea</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center gap-4 border border-outline-variant/10">
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-error uppercase block mb-1">Instead of</span>
+<span class="font-bold">White Bread</span>
+</div>
+<span class="material-symbols-outlined text-primary">trending_flat</span>
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Choose</span>
+<span class="font-bold">Sourdough</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center gap-4 border border-outline-variant/10">
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-error uppercase block mb-1">Instead of</span>
+<span class="font-bold">Orange Juice</span>
+</div>
+<span class="material-symbols-outlined text-primary">trending_flat</span>
+<div class="text-center w-1/2">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Choose</span>
+<span class="font-bold">Whole Orange</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary rounded-xl p-8 text-white flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-extrabold text-2xl mb-2">Plan Efficacy</h3>
+<p class="text-primary-fixed opacity-90 text-sm">Following this plan consistently can reduce post-meal spikes by up to 34%.</p>
+</div>
+<div class="mt-8 flex justify-center">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-on-primary/10" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary-fixed" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="100" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-extrabold">85%</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Match</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] mt-4 uppercase font-bold tracking-widest text-center opacity-70">Alignment with your profile</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col items-center text-center space-y-6 bg-[#f2f4f6] dark:bg-slate-950 block">
+<div class="text-lg font-bold text-slate-900 dark:text-white">SugarCare</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-400 hover:text-slate-600 transition-colors font-body text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-600 transition-colors font-body text-sm" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-600 transition-colors font-body text-sm" href="#">Support</a>
+<a class="text-slate-400 hover:text-slate-600 transition-colors font-body text-sm" href="#">Medical Advisory Board</a>
+</nav>
+<div class="max-w-3xl mx-auto border-t border-outline-variant/20 pt-6">
+<p class="font-['Inter'] text-sm text-slate-500 leading-relaxed">
+                © 2024 SugarCare HealthTech. Medical Disclaimer: Consult a physician before making dietary changes. The recommendations provided are for educational purposes and do not replace clinical advice.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0_-12px_40px_rgba(25,28,30,0.06)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#22C55E]/10 text-[#22C55E] rounded-full px-5 py-2" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Food</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">ads_click</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Tracker</span>
+</a>
+</nav>
+</body></html>
