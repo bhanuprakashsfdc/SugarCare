@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#86f2e4",
+              "surface-dim": "#d8dadc",
+              "on-secondary": "#ffffff",
+              "background": "#f7f9fb",
+              "on-primary-fixed-variant": "#005321",
+              "on-tertiary-fixed-variant": "#7f2a21",
+              "primary": "#006e2f",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#002109",
+              "on-tertiary-fixed": "#410001",
+              "primary-container": "#22c55e",
+              "surface-tint": "#006e2f",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-highest": "#e0e3e5",
+              "outline": "#6d7b6c",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed-dim": "#ffb4a9",
+              "surface-container": "#eceef0",
+              "on-secondary-fixed": "#00201d",
+              "tertiary-container": "#ff8b7c",
+              "on-secondary-container": "#006f66",
+              "surface-container-high": "#e6e8ea",
+              "primary-fixed": "#6bff8f",
+              "on-background": "#191c1e",
+              "inverse-surface": "#2d3133",
+              "outline-variant": "#bccbb9",
+              "tertiary-fixed": "#ffdad5",
+              "on-surface-variant": "#3d4a3d",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed-dim": "#4ae176",
+              "on-primary": "#ffffff",
+              "surface": "#f7f9fb",
+              "on-error": "#ffffff",
+              "tertiary": "#9e4036",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#4ae176",
+              "on-primary-container": "#004b1e",
+              "on-tertiary-container": "#76231b",
+              "secondary": "#006a61",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e0e3e5",
+              "on-secondary-fixed-variant": "#005049"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#f7f9fb]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold text-[#22C55E] tracking-tighter">SugarCare</div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] font-bold tracking-tight">
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Weekly Plan</a>
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#">Food Guide</a>
+<a class="text-slate-500 hover:text-[#22C55E] transition-colors" href="#">Habits</a>
+</div>
+<div class="flex items-center space-x-4 text-[#22C55E]">
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+<!-- Hero Search Section -->
+<section class="mb-16">
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-tight mb-8">
+                Your Health, <br/><span class="text-primary">One Bite at a Time.</span>
+</h1>
+<div class="relative max-w-2xl group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="restaurant">restaurant</span>
+</div>
+<input class="w-full h-20 pl-16 pr-8 bg-surface-container-high border-none rounded-xl text-xl font-medium focus:ring-4 focus:ring-primary-container/20 transition-all shadow-sm placeholder:text-outline" placeholder="What do you want to eat?" type="text"/>
+<button class="absolute right-4 top-4 bottom-4 px-8 bg-primary text-on-primary rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all">
+                    Find Food
+                </button>
+</div>
+</section>
+<!-- Category: Low Sugar Foods (Bento Style) -->
+<section class="mb-20">
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-sm block mb-2">Safe Choices</span>
+<h2 class="text-4xl font-extrabold">Low Sugar Foods</h2>
+</div>
+<a class="text-secondary font-bold flex items-center gap-2 hover:underline" href="#">
+                    View All <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Featured Card -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row h-full border border-outline-variant/10">
+<div class="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+<img alt="Fresh green salad" class="w-full h-full object-cover" data-alt="Vibrant close-up of a fresh green salad with kale, spinach, avocado, and seeds in a ceramic bowl, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXoCmnExKYD4diq_r1buFEMjCMwqZFOhEcB52A3dnx5adD1Pli-LrvQZVLqFRzyTZCCOJIjXbBzIh9LLWVkJYFwugXVl7IkUBLboJSj-UDfVG4egDEj4SKg_sw8Sw135raM6b-MGZTUQ3fnk3FAdaJf-ivk3PMYgbePr7SG3VmdBqloRkCyQPI2EdkODfblWuOxdQco6_9TsjXhKXcWtdfNOsN8qvX7y0AvIilwvDUoscl9sg8W7yodJWNcwRqClPOPg-Yx2uFqw"/>
+</div>
+<div class="p-8 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-4 py-1.5 bg-primary-container/10 text-primary font-bold rounded-full text-sm">GOOD</span>
+<span class="text-label-md text-outline">GI: 15</span>
+</div>
+<h3 class="text-3xl font-bold mb-3">Leafy Green Salad</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">Excellent source of magnesium which helps insulin work better in the body.</p>
+<div class="mt-auto flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                            Metabolic Friendly
+                        </div>
+</div>
+</div>
+<!-- Secondary Cards Stack -->
+<div class="md:col-span-5 grid grid-cols-1 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-6 shadow-sm border border-outline-variant/10">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Brown Rice Bowl" class="w-full h-full object-cover" data-alt="Rustic bowl of steaming organic brown rice, macro photography, warm earthy tones and soft steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9D89ZCU-LXfdrU8mJ5NiypJEBLxvRC__z5X0vVT2wzfkLWO4S2heJeuvXKBQjSRgy_wLt72zGN38RiNApV2oEzMAkBQCkL_tBxsGQYdjwPI7ZiHxu9CHVdfs2CmJtf5cVL_Ltx1wZwtOY1-MLBzBFcQndfhF8NauPNolmn-tk-dTyN8qF-iCftxcBhGkmKebWaZfpUuQ1hseqL-GVZzmIhtnX8SJH8H9BywTF2XlZ1a7kAZICBugZ4bvHpGuOdRj0h1-unCVqYw"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-3 py-1 bg-primary-container/10 text-primary font-bold rounded-full text-xs">GOOD</span>
+<span class="text-xs text-outline">GI: 50</span>
+</div>
+<h4 class="text-xl font-bold">Brown Rice</h4>
+<p class="text-sm text-on-surface-variant">Complex carb that releases energy slowly.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-6 shadow-sm border border-outline-variant/10">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Raw Almonds" class="w-full h-full object-cover" data-alt="Handful of raw almonds on a wooden surface, soft morning light, focus on textures of the nuts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCylhdmCkQfSLwjLpT2J0r73YWhP_vDCKxvMJY0vI2qXsIIbJaQOEekbX3GiA0O6tTwuKVybCF2QJnmUAgkwbNqpgq8K6TbMTZG3izClAic6iO9G-2jBT88TTKQAjxEiT1V4Xby0lFJL-PcmIanEeJEfeP2uinD4jakuMfz0w-zHEQZncb4BW0PCp6veLWRzsdLSQbyu5t_i9WdRM9_1-HUR1LoDvo5DierRMjA6MH7xOm54yuy7H4UiqLnuiYywmrFUWwLt7fwQA"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-3 py-1 bg-primary-container/10 text-primary font-bold rounded-full text-xs">GOOD</span>
+<span class="text-xs text-outline">GI: 0</span>
+</div>
+<h4 class="text-xl font-bold">Almonds</h4>
+<p class="text-sm text-on-surface-variant">Rich in fiber and healthy fats, zero sugar spikes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Smart Swaps (Interactive Tonal Depth) -->
+<section class="mb-20">
+<div class="mb-8">
+<span class="text-secondary font-bold tracking-widest uppercase text-sm block mb-2">Eat This, Not That</span>
+<h2 class="text-4xl font-extrabold">Smart Swaps</h2>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 md:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Swap Card 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 text-center md:text-right">
+<div class="text-tertiary font-bold mb-2 uppercase tracking-tighter">Instead of</div>
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto md:ml-auto mb-4 border-4 border-error-container">
+<img alt="White Bread" class="w-full h-full object-cover opacity-60 grayscale-[50%]" data-alt="Slices of plain white bread on a clinical kitchen surface, flat overhead lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH6p-gl4NPweaWNVRQOpgtlb2n-exx-rS4KbhcXgoxubv8-kGgt0ffCkF_McHRAxNVKYzxYUry0M92vkK4kUlvfkwvli9Z9PrANv3Wz16Z5rVblHWezsTp9vUQ3uSE26r81eJwuqtBVMQ_bw2zm3TjXkvoVMHwvmqeDY7KCvRfdw6-6xZm-gDI1xP8vh29zgs_PIeUXLQsABNhgfoUtTql5cK9OlRUU9gnps5lm9gK7Z16W56WXDhibelKLv97X5PYNFxBu53maw"/>
+</div>
+<h3 class="text-xl font-bold">White Bread</h3>
+<span class="text-error font-semibold text-sm">GI: 75 (High)</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="swap_horiz">swap_horiz</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="text-primary font-bold mb-2 uppercase tracking-tighter">Try This</div>
+<div class="w-48 h-48 rounded-full overflow-hidden mx-auto md:mr-auto mb-4 border-4 border-primary-container shadow-xl">
+<img alt="Whole Grain Sourdough" class="w-full h-full object-cover" data-alt="Thick slice of toasted whole grain sourdough bread with visible seeds and textures, warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5GRyhbX63w8Nb4Ae_Og2JNJAEBScZKmvbfoZJOY1D0vW4_pdWVyJuuzwhPMmT57BF-Iime3Wl6lCE4_s2DSyeRs5TcHsTQCblm9WDW8hrInaaHOQOy_Mak7BiZZMkpjQQAB4pNffLTeVUFx1H40pJyjCrEqCvhun3T0Y8PMaGDvd_Z1cvY49XxLMgiHKVqqM0O4nNl007R55Br36s7CuaSG4AjjDAn6ha6kPVlGQXodEh5ZbpicQXwGwzkhfq51wMhl0WPBdulQ"/>
+</div>
+<h3 class="text-2xl font-extrabold">Whole Grain</h3>
+<span class="text-primary font-semibold text-sm">GI: 51 (Low)</span>
+</div>
+</div>
+<!-- Swap Insight Box -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<h4 class="text-2xl font-bold mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+                            Why Swap?
+                        </h4>
+<p class="text-on-surface-variant leading-relaxed mb-6 text-lg">
+                            Whole grains contain the bran and germ, which are packed with fiber. Fiber slows down the digestion of starch into glucose—meaning smaller, more manageable rises in blood sugar.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check">check</span>
+                                Keeps you full for longer
+                            </li>
+<li class="flex items-start gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check">check</span>
+                                Improves digestive health
+                            </li>
+<li class="flex items-start gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check">check</span>
+                                Supports stable energy levels
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Avoid Foods (Minimalist Warning Grid) -->
+<section class="mb-20">
+<div class="mb-8">
+<span class="text-tertiary font-bold tracking-widest uppercase text-sm block mb-2">Cautionary Choices</span>
+<h2 class="text-4xl font-extrabold">Avoid Foods</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Avoid Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-tertiary-container/20 group hover:border-tertiary transition-all shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary font-bold rounded-full text-xs">AVOID</span>
+<span class="material-symbols-outlined text-tertiary/40 group-hover:text-tertiary transition-colors" data-icon="report">report</span>
+</div>
+<div class="h-32 rounded-lg overflow-hidden mb-4">
+<img alt="White Sugar" class="w-full h-full object-cover grayscale opacity-80" data-alt="Mound of refined white sugar on a dark background, harsh lighting emphasizing crystals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRw2I0abBv3p7ZsWVOPC1j0PwNB7BtxII_kjQ89pwMqIQZhJLBZdHse-AJ1u3nnnFc5i2Y6035nQ3Vd9_Yfm9Q5m2raDiJF4kyos89YR3mENcM6LgpUtRZsm1-8ez8hSTDqePoeWZXx1Sdvy8tXJ_rYEU-tFLM3GWludb_R3bpFfosNqx0vl6khzzBK_wm4VQhXrC1JbzGdiyW7WY1vL6DEfuITHIeKO2Z60Iu9EzGxAh22B2NG8kMutug1KZkxIsPugIGSPD4iQ"/>
+</div>
+<h4 class="text-xl font-bold mb-1">White Sugar</h4>
+<p class="text-sm text-outline mb-4">Pure sucrose causes immediate glucose spikes.</p>
+<div class="flex items-center gap-2 text-tertiary text-xs font-bold bg-tertiary-container/5 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        GI: 100
+                    </div>
+</div>
+<!-- Avoid Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-tertiary-container/20 group hover:border-tertiary transition-all shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary font-bold rounded-full text-xs">AVOID</span>
+<span class="material-symbols-outlined text-tertiary/40 group-hover:text-tertiary transition-colors" data-icon="report">report</span>
+</div>
+<div class="h-32 rounded-lg overflow-hidden mb-4">
+<img alt="Fruit Juice" class="w-full h-full object-cover grayscale opacity-80" data-alt="Glass of industrial orange juice, bright colors but processed look, clinical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu1rSzb9YSHA_TvlyoN8T6FAFEuLUmCuZqznphxvjOBO4ow6c-Z-wwcNjYfGwsimRyfgXez_CXEzjzKFp9-WvLganNzZiQd3Amf5p8BInHgYj8ZlwkC_0R-MoJzrrn1RomTwO1X_LF_X5xaW_Ur911envjRS_5Ly5NMseMK7gJZ-DLsshDvNAPAsf2-uVF6Sv4ObCCk51bRh2ESymnsfUlvPYpWQWgEP-W6ZrRQhm64sb3b4faCsCLKc1nEJn98Fq60jTaBEeyyg"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Fruit Juice</h4>
+<p class="text-sm text-outline mb-4">Fiber-stripped sugar water from fruit.</p>
+<div class="flex items-center gap-2 text-tertiary text-xs font-bold bg-tertiary-container/5 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        GI: 68
+                    </div>
+</div>
+<!-- Avoid Card 3 (Moderate) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 group hover:border-secondary transition-all shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-secondary-container/10 text-secondary font-bold rounded-full text-xs">MODERATE</span>
+<span class="material-symbols-outlined text-secondary/40 group-hover:text-secondary transition-colors" data-icon="info">info</span>
+</div>
+<div class="h-32 rounded-lg overflow-hidden mb-4">
+<img alt="Idli" class="w-full h-full object-cover" data-alt="Steaming white idli on a banana leaf, traditional Indian breakfast, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzuHzaLrZs8iDPoO2uHRZc0I7FG2EXUUX4bZG2HrLqCvWkaY3uaWb1D7e_07-uMVauL0Iasu6e0VE7xm8qxwwUCLvd3mPc-uqN_L3Yk59e3D1_lKMcT82ajsXWoR-CmPB3WXPWoHZLKR9m4Gz_ib_Bwpzutf3igG8vkg_ioP0cBw9RDnIeZAJUlQ5bH0q5Y_x0B9WLUH3r4wxgR4TycXMkW5_z1EfSb3ztZ6459BMXHJCr4ifNW5i47SqzEnXwjqAkAytWmEYtMQ"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Idli</h4>
+<p class="text-sm text-outline mb-4">Limit to 2-3 pieces. Pair with fiber-rich sambar.</p>
+<div class="flex items-center gap-2 text-secondary text-xs font-bold bg-secondary-container/5 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        GI: 60
+                    </div>
+</div>
+<!-- Avoid Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-tertiary-container/20 group hover:border-tertiary transition-all shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary font-bold rounded-full text-xs">AVOID</span>
+<span class="material-symbols-outlined text-tertiary/40 group-hover:text-tertiary transition-colors" data-icon="report">report</span>
+</div>
+<div class="h-32 rounded-lg overflow-hidden mb-4">
+<img alt="Cereal" class="w-full h-full object-cover grayscale opacity-80" data-alt="Bowl of sugary processed corn flakes being poured into, monochromatic clinical feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2N3wfYmebErORXOtVaznf4NEcUA1pZILvtBlFIl-BUYFl43_B-c8qH-xELZ4hQIRBgGkoiIBUDRyvaK40l9ZPegm6bVoBw67MGlK6AiI4fHxLTIGGi5RYCIKu4Zlg2s_-gQF9h7UmyEjc9TOVC3EJbGvHYOCyi9pWE6Wnx7126YlkX7iJIsbyXtjNLCukkoP1LzyoqhIbEpyZi0wGhRrfL6FGFIK23F-a6z1gEHW-015sgpqP6enBUOHlKFH-IJ3EOQMIUsRi7w"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Sweetened Cereal</h4>
+<p class="text-sm text-outline mb-4">Refined grains with added high fructose corn syrup.</p>
+<div class="flex items-center gap-2 text-tertiary text-xs font-bold bg-tertiary-container/5 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        GI: 82
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f2f4f6] dark:bg-slate-950 w-full py-12 px-8 flex flex-col items-center text-center space-y-6">
+<div class="text-lg font-bold text-slate-900 dark:text-white">SugarCare HealthTech</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-400 hover:text-slate-600 font-['Inter'] text-sm leading-relaxed transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-600 font-['Inter'] text-sm leading-relaxed transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-600 font-['Inter'] text-sm leading-relaxed transition-colors" href="#">Support</a>
+<a class="text-slate-400 hover:text-slate-600 font-['Inter'] text-sm leading-relaxed transition-colors" href="#">Medical Advisory Board</a>
+</div>
+<div class="max-w-3xl font-['Inter'] text-sm text-slate-500 leading-relaxed px-4 italic">
+            © 2024 SugarCare HealthTech. Medical Disclaimer: Consult a physician before making dietary changes. The glycemic index values provided are approximations and individual metabolic responses may vary.
+        </div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0_-12px_40px_rgba(25,28,30,0.06)] rounded-t-[3rem]">
+<button class="flex flex-col items-center justify-center text-slate-400 hover:bg-slate-50 py-2 px-5">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 hover:bg-slate-50 py-2 px-5">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Plan</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#22C55E]/10 text-[#22C55E] rounded-full px-5 py-2 scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Food</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 hover:bg-slate-50 py-2 px-5">
+<span class="material-symbols-outlined" data-icon="Ads_click">ads_click</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Tracker</span>
+</button>
+</nav>
+</body></html>
