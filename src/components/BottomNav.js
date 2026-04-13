@@ -6,9 +6,12 @@ import { usePathname } from 'next/navigation';
 const navItems = [
   { href: '/', label: 'Home', icon: 'grid_view', matchExact: true },
   { href: '/dashboard', label: 'Dashboard', icon: 'monitoring', matchExact: false },
-  { href: '/weekly-plan', label: 'Plan', icon: 'calendar_today', matchExact: false },
+  { href: '/recipes', label: 'Recipes', icon: 'restaurant_menu', matchExact: false },
   { href: '/food-guide', label: 'Food', icon: 'restaurant', matchExact: false },
-  { href: '/habits', label: 'Tracker', icon: 'ads_click', matchExact: false },
+  { href: '/tracker', label: 'Tracker', icon: 'ads_click', matchExact: false },
+  { href: '/cholesterol', label: 'Heart', icon: 'favorite', matchExact: false },
+  { href: '/challenges', label: 'Challenges', icon: 'emoji_events', matchExact: false },
+  { href: '/community', label: 'Community', icon: 'group', matchExact: false },
 ];
 
 export default function BottomNav() {

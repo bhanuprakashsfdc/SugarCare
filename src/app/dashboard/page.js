@@ -9,6 +9,7 @@ import SugarInputForm from '@/components/SugarInputForm';
 import HealthScoreCard from '@/components/HealthScoreCard';
 import GlucoseChart from '@/components/GlucoseChart';
 import EmergencyModal from '@/components/EmergencyModal';
+import AnalyticsDashboard from '@/components/AnalyticsDashboard';
 import { useSugar } from '@/context/SugarContext';
 import { getSugarStatus } from '@/utils/helpers';
 import Link from 'next/link';
@@ -96,41 +97,51 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <section className="space-y-6 animate-fade-in-up-delay-2">
-          <h2 className="text-2xl font-extrabold font-headline tracking-tight">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button
-              onClick={() => setShowInput(!showInput)}
-              className="group flex items-center justify-between p-6 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl shadow-lg hover:opacity-90 transition-all scale-100 active:scale-95"
-            >
-              <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-2xl">add_circle</span>
-                <span className="font-bold tracking-tight">Log Sugar</span>
-              </div>
-              <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-            </button>
-            <Link
-              href="/food-guide"
-              className="group flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all scale-100 active:scale-95"
-            >
-              <div className="flex items-center gap-4 text-on-surface">
-                <span className="material-symbols-outlined text-2xl text-secondary">restaurant</span>
-                <span className="font-bold tracking-tight">What should I eat now?</span>
-              </div>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">smart_toy</span>
-            </Link>
-            <Link
-              href="/weekly-plan"
-              className="group flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all scale-100 active:scale-95"
-            >
-              <div className="flex items-center gap-4 text-on-surface">
-                <span className="material-symbols-outlined text-2xl text-primary">calendar_today</span>
-                <span className="font-bold tracking-tight">View Weekly Plan</span>
-              </div>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">event_note</span>
-            </Link>
-          </div>
-        </section>
+<section className="space-y-6 animate-fade-in-up-delay-2">
+           <h2 className="text-2xl font-extrabold font-headline tracking-tight">Quick Actions</h2>
+           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+             <button
+               onClick={() => setShowInput(!showInput)}
+               className="group flex items-center justify-between p-6 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl shadow-lg hover:opacity-90 transition-all scale-100 active:scale-95"
+             >
+               <div className="flex items-center gap-4">
+                 <span className="material-symbols-outlined text-2xl">add_circle</span>
+                 <span className="font-bold tracking-tight">Log Sugar</span>
+               </div>
+               <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+             </button>
+             <Link
+               href="/food-guide"
+               className="group flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all scale-100 active:scale-95"
+             >
+               <div className="flex items-center gap-4 text-on-surface">
+                 <span className="material-symbols-outlined text-2xl text-secondary">restaurant</span>
+                 <span className="font-bold tracking-tight">What should I eat now?</span>
+               </div>
+               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">smart_toy</span>
+             </Link>
+             <Link
+               href="/weekly-plan"
+               className="group flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all scale-100 active:scale-95"
+             >
+               <div className="flex items-center gap-4 text-on-surface">
+                 <span className="material-symbols-outlined text-2xl text-primary">calendar_today</span>
+                 <span className="font-bold tracking-tight">View Weekly Plan</span>
+               </div>
+               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">event_note</span>
+             </Link>
+             <Link
+               href="/recipes"
+               className="group flex items-center justify-between p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all scale-100 active:scale-95"
+             >
+               <div className="flex items-center gap-4 text-on-surface">
+                 <span className="material-symbols-outlined text-2xl text-primary">menu_book</span>
+                 <span className="font-bold tracking-tight">Recipe Database</span>
+               </div>
+               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">restaurant</span>
+             </Link>
+           </div>
+         </section>
 
         {showInput && (
           <section className="max-w-md mx-auto">
@@ -176,6 +187,11 @@ export default function DashboardPage() {
               <p className="text-2xl font-extrabold font-headline text-primary">{projectionData[30]?.level || '—'}</p>
             </div>
           </div>
+        </section>
+
+        <section className="animate-fade-in-up-delay-3">
+          <h3 className="font-headline font-extrabold text-2xl mb-6">Advanced Analytics</h3>
+          <AnalyticsDashboard />
         </section>
       </main>
       <Footer />

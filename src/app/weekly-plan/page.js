@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import BottomNav from '@/components/BottomNav';
 import Footer from '@/components/Footer';
@@ -8,6 +9,18 @@ import { weeklyMealPlan, foodSwaps } from '@/data/mockData';
 export default function WeeklyPlanPage() {
   const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const todayName = dayNames[new Date().getDay()];
+
+  const getMealSlug = (mealType) => {
+    const map = {
+      breakfast: 'breakfast',
+      lunch: 'lunch',
+      dinner: 'dinner',
+      snack: 'snack',
+    };
+    return map[mealType] || mealType;
+  };
+
+  const getDaySlug = (day) => day.toLowerCase();
 
   return (
     <>
@@ -65,15 +78,30 @@ export default function WeeklyPlanPage() {
                       <p className="text-label-md text-on-surface-variant font-medium">Focus: {day.focus}</p>
                     </div>
                     <div className="space-y-4">
-                      {Object.entries(day.meals).map(([mealType, meal]) => (
-                        <div key={mealType} className="space-y-2">
-                          <label className="text-[10px] font-bold uppercase tracking-widest text-outline">{mealType}</label>
-                          <div className="bg-surface-container-low p-3 rounded-lg flex items-center justify-between">
-                            <span className="text-sm font-semibold">{meal.name}</span>
-                            <span className="material-symbols-outlined text-primary text-lg filled">{meal.icon}</span>
-                          </div>
-                        </div>
-                      ))}
+                      {Object.entries(day.meals).map(([mealType, meal]) => {
+                        const daySlug = getDaySlug(day.day);
+                        const mealSlug = getMealSlug(mealType);
+                        const itemId = `${daySlug.slice(0, 3)}-${mealSlug}`;
+
+                        return (
+                          <Link
+                            key={mealType}
+                            href={`/weekly-plan/${daySlug}/prepare/${itemId}`}
+                            className="block space-y-2 group"
+                          >
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-outline">{mealType}</label>
+                            <div className="bg-surface-container-low p-3 rounded-lg flex items-center justify-between group-hover:bg-surface-container group-hover:shadow-sm transition-all cursor-pointer">
+                              <span className="text-sm font-semibold group-hover:text-primary transition-colors">{meal.name}</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+                                  Prepare
+                                </span>
+                                <span className="material-symbols-outlined text-primary text-lg filled">{meal.icon}</span>
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
                     </div>
                     <div className="mt-auto pt-4 bg-tertiary-container/10 rounded-lg p-3">
                       <div className="flex items-center gap-2 mb-2">

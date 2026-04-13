@@ -5,9 +5,14 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/dashboard', label: 'Dashboard' },
-  { href: '/weekly-plan', label: 'Weekly Plan' },
+  { href: '/recipes', label: 'Recipes' },
   { href: '/food-guide', label: 'Food Guide' },
-  { href: '/habits', label: 'Habits' },
+  { href: '/weekly-plan', label: 'Meal Plan' },
+  { href: '/tracker', label: 'Tracker' },
+  { href: '/cholesterol', label: 'Cholesterol' },
+  { href: '/challenges', label: 'Challenges' },
+  { href: '/community', label: 'Community' },
+  { href: '/blog', label: 'Articles' },
 ];
 
 export default function Navbar() {
